@@ -1,0 +1,394 @@
+body {
+    font-family: "Space Grotesk", sans-serif;
+    background-color: #121212;
+    color: white;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+.profile-name,
+.section-title,
+.view-player-btn {
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+}
+
+.header-stat-value.elo {
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+a {
+    margin: 0;
+    border: 0;
+}
+
+.profile-card {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    width: 80%;
+    max-width: none;
+    overflow: visible;
+    padding: 10px 20px;
+}
+
+.profile-header {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+    .profile-header {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.profile-image-container {
+    position: relative;
+    margin-bottom: -25px;
+    margin-left: 10px;
+}
+
+.profile-image {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgb(177, 177, 177);
+    background-color: grey;
+}
+
+.status-badge {
+    z-index: 100;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #121212;
+    color: black;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid rgb(139, 139, 139);
+}
+
+.active {
+    background-color: #9cd365;
+}
+
+.inactive {
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+    background-color: #404040;
+    color: white;
+}
+
+.profile-name-container {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .profile-name-container {
+        text-align: left;
+    }
+}
+
+.profile-name {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.profile-country {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media (min-width: 768px) {
+    .profile-country {
+        justify-content: flex-start;
+    }
+}
+
+.profile-header-stats {
+    display: flex;
+    gap: 80px;
+    margin-top: 20px;
+    margin-left: 45px;
+}
+
+/* Each metric is a vertical stack */
+.header-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Top line: small gray icon + date */
+.header-stat-date {
+    margin-bottom: 0px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.header-stat-date .small-icon {
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+}
+
+.header-stat-value {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 4px 0;
+    color: #eee;
+    line-height: 1;
+}
+
+.header-stat-value.elo {
+    font-size: 32px;
+}
+
+.header-stat-value.other {
+    font-size: 18px;
+    color: #eee;
+    font-weight: semi-bold;
+}
+
+/* Bottom line: gray label */
+.header-stat-label {
+    margin-bottom: 3px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.header-stat-label.elo {
+    margin-top: 0px;
+    font-size: 16px;
+}
+
+.header-stat-label.other {
+    font-size: 14px;
+}
+
+.header-other-stats {
+    display: flex;
+    gap: 100px;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+.header-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    color: #eee;
+    margin-bottom: 4px;
+}
+
+.header-stat-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.header-stat-label .small-icon {
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+}
+
+hr.divider {
+    border: none;
+    border-top: 1px solid #464646;
+    margin: 10px 20px 16px 20px;
+    width: 58%;
+}
+
+.elo-graph-container {
+    width: 90vw;
+    background-color: #121212;
+    overflow-x: auto;
+}
+.matches-section {
+    margin-left: 40px;
+}
+
+.match {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 12px 16px;
+    width: 290px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.match-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.calendar-icon {
+    width: 16px;
+    height: 16px;
+    stroke: rgba(255, 255, 255, 0.6);
+}
+
+.match-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.match-row .elo {
+    margin-right: 8px;
+    width: 45px;
+}
+
+.elo-change {
+    font-weight: 600;
+    width: 40px;
+    text-align: right;
+}
+
+.elo-change.positive {
+    color: #4caf50;
+}
+
+.elo-change.negative {
+    color: #f44336;
+}
+
+.matches-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 20px;
+    padding-bottom: 10px;
+    margin-top: 16px;
+    margin-right: 40px;
+    scrollbar-width: none;
+}
+
+.matches-container::-webkit-scrollbar {
+    display: none;
+}
+
+.elo-graph-container {
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.match-sets {
+    margin-left: 8px;
+    color: #ccc;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.match-set-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.set-score {
+    font-size: 15px;
+    line-height: 1.2;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.set-score.winner {
+    font-weight: 700;
+    color: white;
+}
+
+.match-row {
+    display: flex;
+    align-items: center;
+}
+
+.player-name {
+    width: 100%;
+    margin-right: 55px;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.set-group {
+    display: flex;
+    gap: 5px;
+    min-width: 30px;
+    justify-content: flex-end;
+    position: absolute;
+    right: 60px;
+}
+
+.set-cell {
+    font-size: 15px;
+    color: #ccc;
+    font-weight: 500;
+    width: 15px;
+    text-align: right;
+}
+
+.set-cell.winner {
+    color: white;
+    font-weight: 700;
+}
+
+.elo-change {
+    width: 40px;
+    text-align: right;
+    font-weight: 600;
+}
+
+.elo-change.positive {
+    color: #4caf50;
+}
+
+.elo-change.negative {
+    color: #f44336;
+}
+
+.match-row .elo {
+    width: 50px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}

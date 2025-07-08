@@ -1,24 +1,98 @@
+* {
+    font-family: "Roboto Mono", monospace !important;
+    font-weight: 700 !important;
+}
+
 body {
-    background-color: #121212;
+    background-color: #18ecdc;
     min-height: 100vh;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
     margin: 0;
 }
 
-.header {
-    background-color: #181818;
+h1,
+h2,
+.th-content {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 300;
+}
+
+body a {
+    text-decoration: none;
     color: white;
-    border: 1px solid #333;
-    padding: 8px 32px;
-    text-align: left;
-    font-size: 14px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100px;
+    border-bottom: 3px solid black;
+    background-color: #f7e129;
+    padding: 8px 50px;
+    padding-left: 15px;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 100px;
+    width: auto;
+}
+
+.header h1 {
+    font-family: "Rubik", sans-serif;
+    font-size: 47px;
+    font-weight: 500;
+    -webkit-text-stroke: 1px white;
+    margin: 0;
+    transform: scaleX(1.05);
+    letter-spacing: 1.1px;
+    margin-top: 3px;
+}
+
+.header .logo {
+    height: 38px;
+    width: auto;
+}
+
+#Home {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+}
+
+/* container for your two buttons */
+.nav-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+/* make each <a class="nav-button"> a square, center its contents */
+.nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
 }
 
 .sorting-options {
     display: flex;
     padding: 20px;
-    background-color: #121212;
     color: white;
 }
 
@@ -31,48 +105,596 @@ body {
     height: 60px;
     margin: 0 10px;
     font-size: 16px;
-    padding: 10px;
-    padding-right: 25px;
+    padding: 10px 25px 10px 10px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
 }
 
 .sorting-options p {
     margin-top: 22px;
 }
 
+/* .sorted-column {
+    color: #ffffff;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.sorted-column {
+    color: white;
+    font-family: "Rubik", sans-serif;
+
+    font-size: 18px;
+    text-shadow: -0.35px -0.35px 0 #fff, 0.35px -0.35px 0 #fff,
+        -0.35px 0.35px 0 #fff, 0.35px 0.35px 0 #fff;
+} */
+
 .table-container {
-    background-color: #181818;
-    width: 95vw;
-    margin-left: 30px;
-    border: 1px solid #333;
-    text-align: left;
-    border-radius: 10px;
-    overflow: hidden;
+    width: 96vw;
+    margin: 20px;
+    overflow-x: auto;
+    background: transparent;
+    border: none;
 }
 
 .tennis-table {
-    border-radius: 10px;
     width: 100%;
     border-collapse: collapse;
-    color: #ffffff;
-    font-family: sans-serif;
+    font-family: "Space Grotesk", monospace;
+    font-size: 19px;
+    border: 3px solid black;
 }
 
 .tennis-table thead {
-    background-color: #252525;
+    background-color: #f7e129;
 }
 
+.tennis-table thead th {
+    position: sticky;
+    top: 0;
+    padding: 16px 24px;
+    color: #1a1a1a;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: none;
+}
+
+.tennis-table thead .th-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tennis-table tbody tr:nth-child(odd) {
+    background-color: #0ca89d;
+}
+
+.tennis-table tbody tr:nth-child(even) {
+    background-color: #77ded8;
+}
+
+.tennis-table tbody td {
+    padding: 5px 24px;
+    white-space: nowrap;
+    font-size: 19px;
+    border: none;
+}
+/* keep dark text on light rows… */
+.tennis-table tbody tr:nth-child(even) td {
+    color: #1a1a1a;
+}
+
+/* …but make text white on the darker (odd) background rows */
+.tennis-table tbody tr:nth-child(odd) td {
+    color: #ffffff;
+}
+
+.tennis-table tbody tr:hover {
+    opacity: 0.85;
+}
+
+.tennis-table .sort-buttons {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.tennis-table .sort-buttons button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.tennis-table .sort-buttons button i {
+    font-size: 10px;
+    color: #444;
+}
+
+.tennis-table .sort-buttons button.asc i,
+.tennis-table .sort-buttons button.desc i {
+    color: #1a1a1a;
+}
+.decay {
+    color: #d45c5c;
+    font-weight: normal;
+}
+
+@keyframes slideInBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.98) rotate(-2deg);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(5px) scale(1.01) rotate(1deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0);
+    }
+}
+
+.row-animate {
+    /* animation-name: slideInBounce; */
+    /* animation-duration: 0.4s; */
+    /* animation-fill-mode: forwards; */
+}
+
+#inactive-logo {
+    height: 20px;
+    width: auto;
+    /* margin-top: 10px; */
+}
+
+.player-name-row {
+    padding-left: 10px;
+}
+
+.player-name-content {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.active-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.player-image {
+    padding: 2px;
+    padding-bottom: 0px;
+    background-color: white;
+    border-radius: 50%;
+    height: 35px;
+    width: 33px;
+    margin: 0;
+}
+
+.player-image.default {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+}
+
+.player-image.active {
+    border: 3px solid #f7e129;
+    border-radius: 50%;
+}
+
+@keyframes pulse-border {
+    0% {
+        box-shadow: 0 0 0 0 rgba(156, 211, 101, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 4px rgba(156, 211, 101, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(156, 211, 101, 0);
+    }
+}
+
+.player-image.inactive {
+    border: 3px solid #f7e129;
+}
+
+.active-icon svg circle {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+}
+
+.title-icon {
+    width: auto;
+    height: 20px;
+}
+
+.detail-row td {
+    background-color: #252525;
+    padding: 12px 20px;
+}
+
+.player-summary {
+    display: flex;
+    height: 215px;
+}
+
+.summary-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.recent-matches {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow-y: auto;
+    margin-right: 10px;
+}
+
+.recent-matches h3 {
+    margin: 0 0 7px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    font-family: "Rubik", sans-serif;
+}
+
+.summary-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+.summary-right h3 {
+    font-family: "Rubik", sans-serif;
+
+    margin: 0 0 8px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    align-self: stretch;
+}
+
+.elo-graph {
+    width: 100%;
+    flex: 1;
+    background-color: #181818;
+    border: 1px solid #333;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color: #888;
+}
+
+.match-card {
+    background-color: #181818;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 12px 8px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.view-player-btn {
+    margin-top: 5px;
+    align-self: start;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    color: #fff;
+    background-color: #181818;
+    border: 1px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.sorting-options input[type="number"] {
+    background-color: #252525;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 40px;
+    margin: 0 10px;
+    font-size: 16px;
+    padding: 10px 5px 10px 10px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: bold;
+    appearance: textfield;
+}
+
+.year-inputs {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* ── HEADER CONTROLS (in yellow) ── */
+.tennis-table thead .controls-row th {
+    background-color: #f7e129;
+    padding: 8px 24px;
+    text-align: center;
+}
+
+.controls {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Year inputs on the left */
+.year-inputs input {
+    width: 50px;
+    height: 30px;
+    border: 3px solid black;
+    text-align: center;
+    padding: 4px;
+    font-size: 15px;
+}
+.to-label {
+    margin: 0 8px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* Page selector on the right */
+.page-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.page-selector label {
+    font-weight: 700;
+}
+
+#page-info-container {
+    border: 3px solid black;
+    padding: 4px;
+    align-items: center;
+    padding-right: 12px;
+    background-color: white;
+}
+
+.page-selector input[type="number"] {
+    width: 35px;
+    height: 28px;
+    border: none;
+    background-color: #c1c1c1;
+    text-align: center;
+    font-size: 15px;
+    margin-right: -5px;
+
+    /* vertically center the single‐line text */
+    line-height: 30px;
+
+    /* remove native spinner arrows */
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.page-selector button {
+    background-color: transparent;
+    color: black;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    border: none;
+    padding: 6px 12px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Ensure your existing thead th row below still gets the yellow background */
+.tennis-table thead th {
+    background-color: #f7e129;
+}
+
+/* Bump up the controls‐row above the header by ~30px total */
+.controls-row th .controls {
+    height: 30px;
+}
+
+.tennis-table thead th:nth-child(1),
+.tennis-table tbody td:nth-child(1) {
+    width: 5%;
+}
+.tennis-table thead th:nth-child(2),
+.tennis-table tbody td:nth-child(2) {
+    width: 40%;
+}
+.tennis-table thead th:nth-child(3),
+.tennis-table tbody td:nth-child(3) {
+    width: 12%;
+}
+.tennis-table thead th:nth-child(4),
+.tennis-table tbody td:nth-child(4) {
+    width: 20%;
+}
+.tennis-table thead th:nth-child(5),
+.tennis-table tbody td:nth-child(5) {
+    width: 22%;
+}
+
+.mode-selectors {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* .mode-selectors select {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+    height: 45px;
+    font-size: 15px;
+    padding: 4px 10px;
+    margin-top: -1px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: bold;
+} */
+
+.mode-toggle {
+    display: inline-flex;
+    border: 3px solid black;
+    overflow: hidden;
+    height: 38px;
+    position: relative;
+}
+
+.toggle-btn {
+    flex: 1;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0 10px;
+    font-size: 15px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.toggle-btn.active {
+    background-color: #0ca89d;
+    color: white;
+}
+.toggle-btn:first-child {
+    border-right: 3px solid black;
+}
+
+.amateur-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: bold;
+    color: #1a1a1a;
+    padding: 4px;
+    padding-right: 28px;
+    border-radius: 8px;
+}
+.amateur-toggle input[type="checkbox"] {
+    transform: scale(1.5);
+    accent-color: black;
+}
+
+.left-controls {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.right-controls {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+/* hide surface columns by default */
+.surface-col {
+    display: none;
+}
+/* 
+
+
+/* make everything more compact */
 .tennis-table th,
 .tennis-table td {
-    font-size: 18px;
-    text-align: left;
-    padding: 12px 30px;
-    border-bottom: 1px solid #333;
+    padding: 4px 2px; /* was 8px / 24px, now half as much */
+    font-size: 19px; /* was 19px, a bit smaller */
+    box-sizing: border-box;
+    overflow: hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-.tennis-table th {
-    font-weight: 500;
-    position: sticky;
-    z-index: 10;
+/* collapsed view (default): hide all surface cols */
+.surface-col {
+    display: none;
+}
+
+/* expanded view: show surface and shrink everything */
+.tennis-table.expanded .surface-col {
+    display: table-column;
+}
+
+/* 1) Remove most of the padding on the very first column */
+.tennis-table th:nth-child(1),
+.tennis-table td:nth-child(1) {
+    padding-right: 2px;
+}
+
+/* 2) Force it down to only what its content needs */
+.tennis-table .rank-col {
+    /* 1% is usually about as small as auto-layout will go;
+     you can even go lower if needed (0.5%, etc.) */
+    width: 1%;
+
+    /* ensure it never goes below two digits wide */
+    min-width: 2ch;
+}
+
+.mode-toggle.hidden {
+    visibility: hidden;
+}
+
+/* .mode-toggle.disabled {
+    position: relative;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.mode-toggle.disabled::after {
+    content: "";
+    position: absolute;
+    top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.4); /* 50% grey overlay */
+/* z-index: 2;
+    border-radius: inherit;
+} */
+
+#page-info {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+button.disabled {
+    opacity: 0.5;
+    font-weight: 100;
+    pointer-events: none;
 }

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>What is Elo?</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&family=Space+Grotesk:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+
+        <link rel="stylesheet" href="info.css" />
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo-group">
+                <h1>Tennis</h1>
+                <img src="../images/logo.svg" alt="ELO Logo" class="logo" />
+            </div>
+            <div class="nav-buttons">
+                <a href="info.html" class="nav-button" title="Info">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="nav-label">Info</span>
+                </a>
+                <a href="index.html" class="nav-button" title="Home">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-label">Home</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>What is Elo?</h2>
+            <p>
+                Elo is a dynamic player rating system originally developed for
+                chess. On this site, I've adapted Elo for tennis. Tennis Elo
+                provides a more accurate and responsive measure of player
+                strength than traditional ranking systems based on tournament
+                performance like the ATP and WTA because Elo updates after every
+                match, focusing on outcomes of matches instead of circumstance.
+            </p>
+
+            <h2>The Elo Formula</h2>
+            <p>
+                <code>Elo_new = Elo_old + K × (Actual – Expected)</code>
+            </p>
+            <p>Where:</p>
+            <ul class="badge-list">
+                <li><code>Actual</code> = 1 for a win, 0 for a loss</li>
+                <li>
+                    <code>Expected</code> = 1 / (1 + 10 ^ ((OpponentElo -
+                    YourElo) / 400))
+                </li>
+                <li>
+                    <code>K</code> = 32 (compared to 16 in chess, for tennis
+                    players compete less frequently, so each match carries more
+                    weight)
+                </li>
+            </ul>
+
+            <div class="highlight-box">
+                Elo updates after every match and gives more weight to bigger
+                upsets. Beating a stronger player raises your Elo significantly;
+                beating a weaker player does not.
+            </div>
+
+            <h2>How to Interpret Elo</h2>
+            <p>
+                Elo is best used as a predictive tool. The greater the
+                difference between two players’ Elo scores, the greater the
+                expected win probability for the higher-rated player. Here are
+                some typical examples:
+            </p>
+            <table
+                style="
+                    width: 35%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                    font-size: 16px;
+                "
+            >
+                <thead>
+                    <tr
+                        style="
+                            background-color: #181818;
+                            border-bottom: 1px solid #333;
+                        "
+                    >
+                        <th
+                            style="
+                                padding: 10px 20px;
+                                padding-right: 55px;
+                                text-align: left;
+                            "
+                        >
+                            Elo Difference
+                        </th>
+                        <th
+                            style="
+                                padding: 10px 20px;
+                                padding-right: 0;
+                                text-align: left;
+                            "
+                        >
+                            Higher Player Win Chance
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #333">
+                        <td style="padding: 10px 20px">25</td>
+                        <td style="padding: 10px 20px">53%</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #333">
+                        <td style="padding: 10px 20px">50</td>
+                        <td style="padding: 10px 20px">58%</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #333">
+                        <td style="padding: 10px 20px">100</td>
+                        <td style="padding: 10px 20px">65%</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #333">
+                        <td style="padding: 10px 20px">200</td>
+                        <td style="padding: 10px 20px">75%</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 20px">400</td>
+                        <td style="padding: 10px 20px">90%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                So the difference in Elo, not just who is higher rated, matters,
+                as a 100-point advantage suggests a clear edge, while a 25-point
+                difference is almost a toss-up.
+            </p>
+
+            <h2>Elo vs Atp</h2>
+            <p>
+                While ATP rankings use a points-based system from tournament
+                rounds, Elo is opponent-sensitive, reflecting <em>who</em> you
+                beat, not just how far you advance. This makes Elo much better
+                at predicting match outcomes.
+            </p>
+            <div class="highlight-box">
+                Elo difference is especially useful in games between closely
+                matched players, where ATP ratings become almost obsolete.
+            </div>
+
+            <div class="image-grid">
+                <img src="../elo.png" alt="Elo win % correlation graph" />
+                <img src="../atp.png" alt="ATP win % correlation graph" />
+            </div>
+
+            <p>Based on match data:</p>
+            <ul class="badge-list">
+                <li>
+                    <strong>33,459</strong> matches were upsets using ATP
+                    ranking
+                </li>
+                <li>
+                    <strong>27,436</strong> matches were upsets using Elo rating
+                </li>
+            </ul>
+
+            <h2>The Decay System</h2>
+            <p>
+                Elo ratings should reflect a player’s current strength—not just
+                past performance. That’s why this system includes
+                <strong>Elo decay</strong>:
+            </p>
+            <ul class="badge-list">
+                <li>
+                    If a player hasn’t played in <strong>365 days</strong>,
+                    their Elo begins to decay
+                </li>
+                <li>
+                    From Day 366 onward, their rating drops by
+                    <strong>1 point per day</strong> of inactivity
+                </li>
+            </ul>
+            <p>
+                This helps prevent long-inactive players from skewing rankings
+                or appearing stronger than they are. It’s especially useful for
+                comeback situations: when a player returns after a long break,
+                their Elo better reflects their current likelihood to win.
+            </p>
+            <div class="highlight-box">
+                In matches where Elo decay applied and the player returned to
+                competition, predictive accuracy improved by
+                <strong>21%</strong> compared to a static rating system.
+            </div>
+            <p>
+                Decay also helps address <strong>Elo inflation</strong>. Elo
+                assumes a closed system, but new players add points and retirees
+                remove them. Over time, this can inflate ratings.
+                <strong>Elo decay</strong> counters this by lowering inactive
+                players’ ratings and keeping the system more accurate.
+            </p>
+
+            <h2>The Absence Penalty System</h2>
+            <p>
+                Decay also helps address <strong>Elo inflation</strong>. Elo
+                assumes a closed system, but new players add points and retirees
+                remove them. Over time, this can inflate ratings.
+                <strong>Elo decay</strong> counters this by lowering inactive
+                players’ ratings. And when players return, their
+                <code>K</code>-value temporarily increases—an added adjustment
+                that reflects uncertainty, like saying, “I don’t know how good
+                you are, but I’ll keep a close eye.”
+            </p>
+
+            Elo with decay and return adjustment is calculated as:<br />
+            <p>
+                <code
+                    >Elo_new = (Elo_old − Decay) + K_adj × (Actual −
+                    Expected)</code
+                >
+            </p>
+
+            <ul class="badge-list" style="margin-top: 8px">
+                <li><code>Decay</code> = max(0, DaysInactive − 365)</li>
+                <li><code>K_adj</code> = usually 64, but sometimes higher</li>
+            </ul>
+
+            <div class="highlight-box">
+                This adjustment lasts for <strong>5 matches</strong> after a
+                player's return, then reverts to the normal elo K value of 32.
+            </div>
+
+            <p>
+                This helps recalibrate ratings more quickly for returning
+                players who may be stronger or weaker than before. It also
+                improves prediction accuracy and keeps Elo responsive to
+                real-world conditions like injury, rest, or hiatus.
+            </p>
+
+            <h2>Era Comparisons</h2>
+            <p>
+                One of the most tempting uses of Elo is comparing players across
+                generations. But while Elo offers a more stable benchmark than
+                tour rankings, it isn’t well-suited for direct cross-era
+                comparisons. A player from the 1980s with a 2400 rating isn't
+                necessarily better than a modern player with the same rating.
+            </p>
+            <p>
+                Take <strong>Björn Borg</strong> and
+                <strong>Roger Federer</strong>, for example. Borg reached a
+                higher peak Elo than Federer. But does that mean Borg would beat
+                Federer head-to-head? Probably not. Elo doesn’t measure absolute
+                ability—it reflects <em>dominance relative to one’s peers</em>.
+                Borg faced weaker depth across the top of his time's field while
+                Federer shared his peak years with both Djokovic and Nadal.
+            </p>
+
+            <div class="highlight-box">
+                Elo shows <strong>relative</strong> strength within a time
+                period—not absolute skill across generations.
+            </div>
+            <h2>Player Titles</h2>
+            <p>Players can earn badges based on their peak Elo:</p>
+            <ul class="badge-list">
+                <li><strong>Super Grandmaster</strong> – Elo 2350+</li>
+                <li><strong>Grandmaster</strong> – Elo 2200+</li>
+                <li><strong>International Master</strong> – Elo 2000+</li>
+            </ul>
+            <p>
+                These badges are retained even if a player's elo drops below the
+                minimum and if a player retires.
+            </p>
+        </div>
+    </body>
+</html>

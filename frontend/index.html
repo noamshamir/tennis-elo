@@ -3,180 +3,407 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Rankings</title>
         <link rel="stylesheet" href="styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <div class="header">
-            <h1>Tennis ELO Ratings</h1>
+            <div class="logo-container">
+                <img src="../text_logo.png" alt="ELO Logo" class="logo-image" />
+            </div>
+            <div class="nav-buttons">
+                <a href="info.html" class="nav-button" id="Info">Info</a>
+                <a href="index.html" class="nav-button" id="Home">Home</a>
+            </div>
         </div>
-        <div class="sorting-options">
-            <select>
-                <option value="option1">Men's Singles</option>
-                <option value="option2">Women's Singles</option>
-                <option value="option3">Men's Doubles</option>
-                <option value="option2">Women's Doubles</option>
-                <option value="option3">Mixed Doubles</option>
-            </select>
-            <select>
-                <option value="option1">Elo Overview</option>
-                <option value="option2">Hardcourt Elo</option>
-                <option value="option3">Clay Court Elo</option>
-                <option value="option3">Grass Court Elo</option>
-            </select>
-            <select>
-                <option value="option1">1961</option>
-                <option value="option2">1962</option>
-                <option value="option3">1963</option>
-                <option value="option1">1964</option>
-                <option value="option2">1965</option>
-                <option value="option3">1966</option>
-                <option value="option1">1967</option>
-                <option value="option2">1968</option>
-                <option value="option3">1969</option>
-                <option value="option1">1970</option>
-                <option value="option1">1971</option>
-                <option value="option2">1972</option>
-                <option value="option3">1973</option>
-                <option value="option1">1974</option>
-                <option value="option2">1975</option>
-                <option value="option3">1976</option>
-                <option value="option1">1977</option>
-                <option value="option2">1978</option>
-                <option value="option3">1979</option>
-                <option value="option3">1980</option>
-                <option value="option1">1981</option>
-                <option value="option2">1982</option>
-                <option value="option3">1983</option>
-                <option value="option1">1984</option>
-                <option value="option2">1985</option>
-                <option value="option3">1986</option>
-                <option value="option1">1987</option>
-                <option value="option2">1988</option>
-                <option value="option3">1989</option>
-                <option value="option1">1990</option>
-                <option value="option1">1991</option>
-                <option value="option2">1992</option>
-                <option value="option3">1993</option>
-                <option value="option1">1994</option>
-                <option value="option2">1995</option>
-                <option value="option3">1996</option>
-                <option value="option1">1997</option>
-                <option value="option2">1998</option>
-                <option value="option3">1999</option>
-                <option value="option3">2000</option>
-                <option value="option3">2001</option>
-                <option value="option3">2002</option>
-                <option value="option3">2003</option>
-                <option value="option3">2004</option>
-                <option value="option3">2005</option>
-                <option value="option3">2006</option>
-                <option value="option3">2007</option>
-                <option value="option3">2008</option>
-                <option value="option3">2009</option>
-                <option value="option3">2010</option>
-                <option value="option3">2011</option>
-                <option value="option3">2012</option>
-                <option value="option3">2013</option>
-                <option value="option3">2014</option>
-                <option value="option3">2015</option>
-                <option value="option3">2016</option>
-                <option value="option3">2017</option>
-                <option value="option3">2018</option>
-                <option value="option3">2019</option>
-                <option value="option3">2020</option>
-                <option value="option3">2021</option>
-                <option value="option3">2022</option>
-                <option value="option3">2023</option>
-                <option value="option3">2024</option>
-                <option value="option3">Present</option>
-            </select>
-            <p>to</p>
-            <select>
-                <option value="option1">1961</option>
-                <option value="option2">1962</option>
-                <option value="option3">1963</option>
-                <option value="option1">1964</option>
-                <option value="option2">1965</option>
-                <option value="option3">1966</option>
-                <option value="option1">1967</option>
-                <option value="option2">1968</option>
-                <option value="option3">1969</option>
-                <option value="option1">1970</option>
-                <option value="option1">1971</option>
-                <option value="option2">1972</option>
-                <option value="option3">1973</option>
-                <option value="option1">1974</option>
-                <option value="option2">1975</option>
-                <option value="option3">1976</option>
-                <option value="option1">1977</option>
-                <option value="option2">1978</option>
-                <option value="option3">1979</option>
-                <option value="option3">1980</option>
-                <option value="option1">1981</option>
-                <option value="option2">1982</option>
-                <option value="option3">1983</option>
-                <option value="option1">1984</option>
-                <option value="option2">1985</option>
-                <option value="option3">1986</option>
-                <option value="option1">1987</option>
-                <option value="option2">1988</option>
-                <option value="option3">1989</option>
-                <option value="option1">1990</option>
-                <option value="option1">1991</option>
-                <option value="option2">1992</option>
-                <option value="option3">1993</option>
-                <option value="option1">1994</option>
-                <option value="option2">1995</option>
-                <option value="option3">1996</option>
-                <option value="option1">1997</option>
-                <option value="option2">1998</option>
-                <option value="option3">1999</option>
-                <option value="option3">2000</option>
-                <option value="option3">2001</option>
-                <option value="option3">2002</option>
-                <option value="option3">2003</option>
-                <option value="option3">2004</option>
-                <option value="option3">2005</option>
-                <option value="option3">2006</option>
-                <option value="option3">2007</option>
-                <option value="option3">2008</option>
-                <option value="option3">2009</option>
-                <option value="option3">2010</option>
-                <option value="option3">2011</option>
-                <option value="option3">2012</option>
-                <option value="option3">2013</option>
-                <option value="option3">2014</option>
-                <option value="option3">2015</option>
-                <option value="option3">2016</option>
-                <option value="option3">2017</option>
-                <option value="option3">2018</option>
-                <option value="option3">2019</option>
-                <option value="option3">2020</option>
-                <option value="option3">2021</option>
-                <option value="option3">2022</option>
-                <option value="option3">2023</option>
-                <option value="option3">2024</option>
-                <option value="option3">Present</option>
-            </select>
-        </div>
+
         <div class="table-container">
-            <table class="tennis-table">
+            <table id="ranking-table" class="tennis-table">
+                <colgroup>
+                    <col class="rank-col" />
+                    <col class="player-col" />
+                    <col class="age-col" />
+                    <col class="elo-col" />
+                    <col class="peak-col" />
+
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+
+                    <!-- surface columns -->
+                    <!-- <col class="surface-col hc-col" />
+                    <col class="surface-col grass-col" /> -->
+                    <!-- <col class="surface-col clay-col" /> -->
+                    <!-- <col class="surface-col carpet-col" /> -->
+                </colgroup>
+
                 <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Player</th>
-                        <th>Age</th>
-                        <th>Elo</th>
-                        <th>Hardcourt Elo</th>
-                        <th>Clay Elo</th>
-                        <th>Grass Elo</th>
-                        <th>Peak Elo</th>
+                    <tr class="controls-row">
+                        <th colspan="9">
+                            <div class="controls">
+                                <div class="left-controls">
+                                    <div class="year-inputs">
+                                        <input
+                                            type="number"
+                                            id="start_year"
+                                            min="1920"
+                                            max="2024"
+                                            value="1968"
+                                        />
+                                        <span class="to-label">to</span>
+                                        <input
+                                            type="number"
+                                            id="end_year"
+                                            min="1920"
+                                            max="2024"
+                                            value="2024"
+                                        />
+                                    </div>
+                                    <div class="mode-selectors">
+                                        <label class="amateur-toggle">
+                                            <input
+                                                type="checkbox"
+                                                id="expanded_view"
+                                            />
+                                            Expanded view
+                                        </label>
+                                        <div class="mode-toggle">
+                                            <button
+                                                id="current_btn"
+                                                class="toggle-btn active"
+                                                onclick="setSurfaceMode('current')"
+                                            >
+                                                Current
+                                            </button>
+                                            <button
+                                                id="peak_btn"
+                                                class="toggle-btn"
+                                                onclick="setSurfaceMode('peak')"
+                                            >
+                                                Peak
+                                            </button>
+                                            <input
+                                                type="hidden"
+                                                id="surface_mode"
+                                                value="current"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right-controls">
+                                    <div class="page-selector">
+                                        <button
+                                            class="first-page"
+                                            onclick="goToPage(1)"
+                                        >
+                                            First
+                                        </button>
+                                        <button
+                                            class="previous-page"
+                                            onclick="goToPrevious()"
+                                        >
+                                            Previous
+                                        </button>
+                                        <div id="page-info-container">
+                                            <input
+                                                type="number"
+                                                id="page-number"
+                                                min="1"
+                                                value="1"
+                                                onchange="goToPage(this.value)"
+                                            />
+                                            <span id="page-info">/1</span>
+                                        </div>
+
+                                        <button
+                                            class="next-page"
+                                            onclick="goToNext()"
+                                        >
+                                            Next
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr id="header-row">
+                        <th>
+                            <div class="th-content">
+                                Rank
+                                <span class="sort-buttons" data-key="rank">
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('rank','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('rank','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th-content">
+                                Player
+                                <span class="sort-buttons" data-key="name">
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('name','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('name','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th-content">
+                                Age
+                                <span class="sort-buttons" data-key="age">
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('age','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('age','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th-content">
+                                Elo
+                                <span class="sort-buttons" data-key="elo">
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('elo','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('elo','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th-content">
+                                Peak Elo
+                                <span class="sort-buttons" data-key="peak_elo">
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('peak_elo','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('peak_elo','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th>
+
+                        <!-- Surface headers -->
+                        <th class="surface-col">
+                            <div class="th-content">
+                                HC
+                                <span
+                                    class="sort-buttons"
+                                    data-key="hardcourt_elo"
+                                >
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('hardcourt_elo','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('hardcourt_elo','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th>
+                        <!-- <th class="surface-col">
+                            <div class="th-content">
+                                HC Peak
+                                <span
+                                    class="sort-buttons"
+                                    data-key="hardcourt_peak"
+                                >
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('hardcourt_peak','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('hardcourt_peak','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th> -->
+                        <th class="surface-col">
+                            <div class="th-content">
+                                Grass
+                                <span class="sort-buttons" data-key="grass_elo">
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('grass_elo','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('grass_elo','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th>
+                        <!-- <th class="surface-col">
+                            <div class="th-content">
+                                G Peak
+                                <span
+                                    class="sort-buttons"
+                                    data-key="grass_peak"
+                                >
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('grass_peak','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('grass_peak','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th> -->
+                        <th class="surface-col">
+                            <div class="th-content">
+                                Clay
+                                <span class="sort-buttons" data-key="clay_elo">
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('clay_elo','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('clay_elo','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th>
+                        <!-- <th class="surface-col">
+                            <div class="th-content">
+                                Cl Peak
+                                <span class="sort-buttons" data-key="clay_peak">
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('clay_peak','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('clay_peak','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th> -->
+                        <th class="surface-col">
+                            <div class="th-content">
+                                Carpet
+                                <span
+                                    class="sort-buttons"
+                                    data-key="carpet_elo"
+                                >
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('carpet_elo','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('carpet_elo','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th>
+                        <!-- <th class="surface-col">
+                            <div class="th-content">
+                                Ca Peak
+                                <span
+                                    class="sort-buttons"
+                                    data-key="carpet_peak"
+                                >
+                                    <button
+                                        class="asc"
+                                        onclick="sortTable('carpet_peak','asc',this)"
+                                    >
+                                        ▲
+                                    </button>
+                                    <button
+                                        class="desc"
+                                        onclick="sortTable('carpet_peak','desc',this)"
+                                    >
+                                        ▼
+                                    </button>
+                                </span>
+                            </div>
+                        </th> -->
                     </tr>
                 </thead>
-                <tbody></tbody>
+
+                <tbody id="table-content"></tbody>
             </table>
         </div>
+
         <script src="script.js"></script>
     </body>
 </html>
